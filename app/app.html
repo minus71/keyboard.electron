@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Electron Boilerplate</title>
+  <title>Keyboard Trainer</title>
   <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -13,23 +13,34 @@
       <span class="app-title">Keyboard</span>
     </div>
     <a id="start" class="start-button">Start !</a>
-    <div id="highscore" class="score">High <span class="value"></span> </div>
-    <div id="score" class="score">Score <span class="value"></span> </div>
-    <div id="rate" class="score">Rate <span class="value"></span> </div>
+    <div id="highscore" class="score" style="display:none">High <span class="value"></span> </div>
+    <div id="score" class="score" style="display:none">Score <span class="value"></span> </div>
+    <div id="level" class="score" style="display:none">Level <span class="value"></span> </div>
+    <div id="rate" class="score" style="display:none">Rate <span class="value"></span> </div>
   </div>
 
   <div class="root" id="splash">
   
     <div class="container">
-      <p>
-        High scores
-      </p>
-      <p>
+      <h1>High Scores</h1>
+      <ol id="hiscores"></ol>
+      <div class="info">Press <span class="space"><div class="inner">
+        SPACE
+      </div></span>to start</div>
+      <p class="author">
         App author: <strong id="author"></strong>
       </p>
     </div>
-  
   </div>
+
+  <div id="game-over" style="display:none">
+    GAME OVER
+  </div>
+
+  <audio id="hitSound" src="audio/hit.wav" autostart="false"></audio>
+  <audio id="missSound" src="audio/miss.wav" autostart="false"></audio>
+
+
   <script src="app.js"></script>
 </body>
 </html>
